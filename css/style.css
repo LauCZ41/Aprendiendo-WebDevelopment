@@ -1,0 +1,193 @@
+*{
+        box-sizing: border-box;
+}
+
+
+html, body{
+      margin: 0;
+      padding: 0;  
+      background: #000000;
+      color: #ffffff;
+      font-size: 30px;
+      font-family:sans-serif ;
+}
+
+
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/*Esto es para hacer el efecto de deslizar*/
+section {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 100px);
+    top: 100px;
+    z-index: 2;
+}
+
+section.sticky {
+    position: sticky;
+    margin-top: 100px;
+}
+
+section.full-screen {
+    height: 100vh;
+    top: 0;
+    margin-top: 0;
+    z-index: 3;
+}
+
+/*navigation*/
+nav{
+        /* background-color: #000; */
+        position: fixed; /* Fija la barra de navegación en la pantalla */
+        width: 100%; /* Ocupa el 100% del ancho de la ventana */
+        height: 100px; /* Altura de 100 píxeles */
+        top: 0; /* Se pega al borde superior */
+        left: 0; /* Se pega al borde izquierdo */
+        font-size: 20px; /* Tamaño de fuente de 20px */
+        z-index: 3;
+}
+
+nav ul{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+}
+
+nav ul li{      
+        list-style: none;
+        margin-left: 45px;
+}
+
+nav ul li a{
+        color: #ffffff;
+        font-family: monospace;
+}
+
+/*about section*/
+
+section.about {
+    display: flex; /* Espacio entre elementos hijos */
+}
+
+section.about .empty{
+        flex-basis: 37.5vw;
+        background-color: #e5e5e5;
+        border-radius: 100px;
+}
+
+section.about article{
+        flex: 1; /*El elemento ocupa 2 partes del espacio disponible en un contenedor flexible (si hay otros elementos con flex: 1, este será el doble de grande).*/
+        display: flex;
+        flex-direction: column;
+}
+
+section.about article .title{
+        flex: 2;
+        display: flex;
+        align-items: flex-end;
+        background: #1c47ff;
+        border-radius: 100px; /*Bordes redondeados con un radio de 100 píxeles*/
+        padding: 6.27px; /*viewport width*/
+        padding-left: 95px;
+        font-size: calc(1.4rem + 2vw);
+        
+        
+}
+
+section.about article .description{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background: #d6a3fb;
+        border-radius: 100px;
+        padding: 6.25vw;
+        color: #000;
+}
+
+/*services */
+
+section.service article{
+        display: flex;
+        width: 100%;
+}
+
+section.service figure{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 56.25vw;
+        margin: 0;
+        background: #d0ff94;
+        border-radius: 100px;
+
+}
+
+section.service figure img{
+        width: 50%;
+}
+
+section.service .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        background: #1f1a1c;
+        padding: 6.25vw;
+        border-radius: 100px;        
+}
+
+section.service .text a{
+        font-family: monospace;
+}
+
+
+/*Services override*/
+/*color del fondo del lado izquierdo con color de las letras*/
+section.service.service-html figure{
+        background: #d0ff94;
+}
+section.service.service-html .text h2,
+section.service.service-html .text a{
+        color: #d6a3fb
+}
+
+section.service.service-css figure{
+        background-color: #1c47ff;
+}
+section.service.service-css .text h2,
+section.service.service-css .text a{
+        color: #e5e5e5
+}
+
+
+section.service.service-jss figure{
+        background-color: #d6a3fb;
+}
+section.service.service-jss .text h2,
+section.service.service-jss .text a{
+        color: #1c47ff
+}
+
+/*Contac section*/
+
+section.contact {
+        display: flex; 
+        align-items: center;
+        justify-content:center;
+        background: linear-gradient(#1c47ff,#d6a3fb, #92c94b ,#e5e5e5);
+        border-radius: 100px;
+}
+section.contact a{
+        font-size: 100px;
+        color: #000000;
+}
