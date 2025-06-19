@@ -4,12 +4,15 @@
 
 
 html, body{
+
       margin: 0;
       padding: 0;  
       background: #000000;
       color: #ffffff;
       font-size: 30px;
-      font-family:sans-serif ;
+      font-family:sans-serif;
+      /*Esto es para limpiar el codigo*/
+      --boorder-radius: 100px
 }
 
 
@@ -25,6 +28,7 @@ section {
     position: relative;
     display: flex;
     width: 100%;
+    /*100% de la vista menos la navegacion realizada*/
     height: calc(100vh - 100px);
     top: 100px;
     z-index: 2;
@@ -82,7 +86,7 @@ section.about {
 section.about .empty{
         flex-basis: 37.5vw;
         background-color: #e5e5e5;
-        border-radius: 100px;
+        border-radius: var(--boorder-radius);
 }
 
 section.about article{
@@ -96,7 +100,7 @@ section.about article .title{
         display: flex;
         align-items: flex-end;
         background: #1c47ff;
-        border-radius: 100px; /*Bordes redondeados con un radio de 100 píxeles*/
+        border-radius: var(--boorder-radius);/*Bordes redondeados con un radio de 100 píxeles*/
         padding: 6.27px; /*viewport width*/
         padding-left: 95px;
         font-size: calc(1.4rem + 2vw);
