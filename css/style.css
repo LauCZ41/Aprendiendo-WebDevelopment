@@ -6,8 +6,13 @@
 
 :root {
       /*Esto es para limpiar el codigo*/
-
-      --boorder-radius: 100px
+        /* Si quiero cambiar el boorder radius ahora lo puedo hacer desde aqui 
+        y se cambia en todo lugar  */
+      --boorder-radius: 100px;
+      --blue: #1c47ff;
+      --pink: #d6a3fb;
+      --green: #92c94b;
+      --grey: #e5e5e5;
 }
 
 html, body{
@@ -89,7 +94,7 @@ section.about {
 
 section.about .empty{
         flex-basis: 37.5vw;
-        background-color: #e5e5e5;
+        background-color: var(--grey);
         border-radius: var(--boorder-radius);
 }
 
@@ -103,7 +108,7 @@ section.about article .title{
         flex: 2;
         display: flex;
         align-items: flex-end;
-        background: #1c47ff;
+        background: var(--blue);
         border-radius: var(--boorder-radius);/*Bordes redondeados con un radio de 100 píxeles*/
         padding: 6.27px; /*viewport width*/
         padding-left: 95px;
@@ -170,7 +175,7 @@ section.service.service-html .text a{
 }
 
 section.service.service-css figure{
-        background-color: #1c47ff;
+        background-color: var(--blue);
 }
 section.service.service-css .text h2,
 section.service.service-css .text a{
