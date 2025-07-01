@@ -21,7 +21,7 @@ html, body{
       background: #000000;
       color: #ffffff;
       font-size: 30px;
-      font-family:sans-serif;
+      font-family: monospace;
 }
 
 
@@ -83,7 +83,7 @@ nav ul li{
 
 nav ul li a{
         color: #ffffff;
-        font-family: monospace;
+        font-family: "Space Mono", monospace;
 }
 
 /*about section*/
@@ -96,6 +96,7 @@ section.about .empty{
         flex-basis: 37.5vw;
         background-color: var(--grey);
         border-radius: var(--boorder-radius);
+        transition: flex-basis 0.5s cubic-bezier(0,.9,.4,.99);
 }
 
 section.about article{
@@ -113,7 +114,7 @@ section.about article .title{
         padding: 6.27px; /*viewport width*/
         padding-left: 95px;
         font-size: calc(1.4rem + 2vw);
-        
+       transition: flex-basis 0.5s cubic-bezier(0,.9,.4,.99);
         
 }
 
@@ -142,6 +143,7 @@ section.service figure{
         margin: 0;
         background: #d0ff94;
         border-radius: 100px;
+        max-width: 62.5vw;
 
 }
 
@@ -161,6 +163,60 @@ section.service .text{
 
 section.service .text a{
         font-family: monospace;
+}
+
+/*Service secion animations*/
+
+section.service.service-html figure img{
+        animation-name: float;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+}
+
+section.service.service-css figure img{
+        animation-name: loop;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+}
+
+section.service.service-jss figure img{
+        animation-name: pongo;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+}
+
+@keyframes float{
+        0%{
+                transform: translateY(-20px);
+        }
+        100%{
+                transform: translateY(20px);
+        }
+}
+
+@keyframes loop{
+        0%{
+                transform: translateX(-40px);
+        }
+        100%{
+                transform: translateX(40px);
+        }
+}
+
+@keyframes pongo {
+        0%{
+                transform:scale(0.7px);
+        }
+        100%{
+                transform: scale(1.5);
+        }
+        
 }
 
 
@@ -199,8 +255,54 @@ section.contact {
         justify-content:center;
         background: linear-gradient(#1c47ff,#d6a3fb, #92c94b ,#e5e5e5);
         border-radius: 100px;
+       /* mix-blend-mode: difference;*/ /*invierte colores */
 }
 section.contact a{
         font-size: 100px;
         color: #000000;
+        transition: filter color 2s;
+}
+section.contact a:hover{
+        color: red;
+        filter: blur(20px);
+}
+
+
+/*Responsive */
+
+@media only screen and (max-width: 768px) {
+    html, body {
+        --border-radius: 50px;
+        --gutter: 6.25vw;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    nav ul li {
+        margin-left: 25px;
+    }
+
+    section.service article {
+        flex-direction: column;
+    }
+
+    section.service figure {
+        flex-basis: 25vh;
+    }
+
+    section.service figure img {
+        width: 20%;
+    }
+
+    section.contact a {
+        font-size: 50px;
+        transform: rotate(90deg);
+    }
+
 }

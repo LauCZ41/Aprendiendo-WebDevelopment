@@ -3,8 +3,11 @@
 <html>
     <head>
         <title> My portfolio </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css\style.css">
-    
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
     <body>  
         
@@ -106,6 +109,24 @@
         <section></section> Para agrupar contenido relacionado dentro de una página o documento
         <article></article> Para contenido que tiene sentido por sí solo o podría reutilizarse (por ejemplo, en feeds o noticias). -->
 
+
+        <!-- JSS -->
+        <script>
+                let emptyElement = document.querySelector('.empty');
+                let figureElemets= document.querySelectorAll('.service figure');
+                let titleElement= document.querySelector('.about .title');   
+
+                window.addEventListener('mousemove', handleMouseMove); 
+
+                function handleMouseMove() {
+                    emptyElement.style.flexBasis = event.clientX + 'px';
+                    titleElement.style.flexBasis = event.clientY + 'px';
+                     figureElemets.forEach( function ( element){
+                        element.style.flexBasis = (window.innerWidth - event.clientX) + 'px';
+                    })
+                }
+                 
+        </script>
     </body>
 
     <!-- Esto sirve para aplicar ciertas cosas a secciones en especifico, por ejemplo con este solo afectamos la seccion About -->
