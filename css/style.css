@@ -1,7 +1,5 @@
 *{
         box-sizing: border-box;
-        margin: 0;
-      padding: 0;  
 }
 
 :root {
@@ -15,7 +13,8 @@
       --grey: #e5e5e5;
 }
 
-html, body{
+html, 
+body{
 
       
       background: #000000;
@@ -24,12 +23,22 @@ html, body{
       font-family: monospace;
 }
 
+h1 {
+    font-size: 70px;
+    line-height: 1em;
+    margin: 0px;
+}
 
+h2 {
+    font-size: 60px;
+    margin: 0px;
+}
 
 a {
     color: #ffffff;
     text-decoration: none;
 }
+
 
 
 /*Esto es para hacer el efecto de deslizar*/
@@ -64,7 +73,7 @@ nav{
         top: 0; /* Se pega al borde superior */
         left: 0; /* Se pega al borde izquierdo */
         font-size: 20px; /* Tamaño de fuente de 20px */
-        z-index: 3;
+        z-index: 1;
 }
 
 nav ul{
@@ -106,7 +115,7 @@ section.about article{
 }
 
 section.about article .title{
-        flex: 2;
+        flex: 1;
         display: flex;
         align-items: flex-end;
         background: var(--blue);
@@ -269,7 +278,6 @@ section.contact a:hover{
 
 
 /*Responsive */
-
 @media only screen and (max-width: 768px) {
     html, body {
         --border-radius: 50px;
@@ -304,5 +312,4 @@ section.contact a:hover{
         font-size: 50px;
         transform: rotate(90deg);
     }
-
 }
